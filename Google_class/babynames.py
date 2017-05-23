@@ -41,6 +41,32 @@ def extract_names(filename):
   ['2006', 'Aaliyah 91', Aaron 57', 'Abagail 895', ' ...]
   """
   # +++your code here+++
+  list_names=[]
+#  print(filename)
+#  yearobj=re.match(r'[0-9]+',filename)
+  print(filename[-9:-5])
+  f=open(filename,'r')
+  
+  f1=f.readlines()
+  
+  for i in range(48,50):
+      print(f1[i])
+      matchobj=re.match(r'<tr align="right"><td>([0-9]+)</td><td>([a-zA-Z]+)</td><td>([a-zA-Z]+)</td>',f1[i])
+      if matchobj:
+          list_names.append(matchobj.group(2)+' '+matchobj.group(1))
+          list_names.append(matchobj.group(3)+' '+matchobj.group(1))
+          print(list_names)
+#          print(matchobj.group(1))
+#          print(matchobj.group(2))
+#          print(matchobj.group(3))
+
+    
+        
+  
+  
+  sys.exit(0)
+  
+  f.close()
   return
 
 
@@ -51,7 +77,7 @@ def main():
   args = sys.argv[1:]
 
   if not args:
-    print 'usage: [--summaryfile] file [file ...]'
+    print ('usage: [--summaryfile] file [file ...]')
     sys.exit(1)
 
   # Notice the summary flag and remove it from args if it is present.
@@ -63,6 +89,8 @@ def main():
   # +++your code here+++
   # For each filename, get the names, then either print the text output
   # or write it to a summary file
+  if summary==True:
+      extract_names(args[0])
   
 if __name__ == '__main__':
   main()
