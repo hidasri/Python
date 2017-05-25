@@ -87,13 +87,19 @@ np.set_printoptions(threshold=np.nan)
 print(a)
 
 
+a=np.ones((2,3),dtype=int)
+b=np.random.random((2,3))
+print(b)
 
+a*=3
+print(a)
 
+a+=b
+print(a)
+print(b)
 
-
-
-
-
-
+a=np.array([  729,   512,   343,   216,   125, -1000,    27, -1000,     1, -1000])
+for i in a:
+    print(i**(1/3.)),
 
 
