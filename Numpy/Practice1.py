@@ -83,7 +83,7 @@ a=np.linspace(1,10,100)
 print(a)
 print(a.dtype)
 
-np.set_printoptions(threshold='nan')
+np.set_printoptions(threshold=np.nan)
 print(a)
 
 
